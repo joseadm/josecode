@@ -4,20 +4,30 @@
 import React, { useState } from "react";
 import fire from '../config/fire-config';
 
+const averageReading = 200;
+
 const CreatePost = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const [date, setDate] = useState('');
+  const [minutes, setMinutes] = useState('');
+
   const [notification, setNotification] = useState('')
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    setDate(new Date());
+    setMinutes(Math.round(content / averageReading));
 
     // firebase: create new blog
     fire.firestore()
     .collection('blog')
     .add({
         title : title,
-        content: content
+        content: content,
+        date: date,
+        minutes: minutes
     });
 
     setTitle('');

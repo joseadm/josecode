@@ -1,5 +1,10 @@
 // blog/[id].js
 
+// pages/index.justify
+import Head from "next/head";
+import { Main } from "../styled";
+import Navbar from "../../components/Navbar";
+
 import { useEffect, useState } from "react";
 import fire from "../../config/fire-config";
 import Link from "next/link";
@@ -19,13 +24,27 @@ const Blog = (props) => {
   }, []);
 
   if (!blog) {
-    return <h2>Loading...</h2>;
+    return <div>
+          <Head>
+    <title>jdev</title>
+  </Head>
+  <Navbar />
+    </div>;
   }
 
   return (
     <div>
-      <h2>{blog.title}</h2>
+
+    <Head>
+    <title>jdev</title>
+  </Head>
+  <Navbar />
+  <Main>
+
+  <h2>{blog.title}</h2>
       <p>{blog.content}</p>
+    </Main>
+
       <Link href="/">
         <a>Back</a>
       </Link>

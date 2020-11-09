@@ -2,15 +2,34 @@
   "name": "jdev",
   "version": "0.1.0",
   "private": true,
+  "babelMacros": {
+    "twin": {
+      "config": "tailwind.config.js",
+      "preset": "styled-components",
+      "debugProp": true,
+      "debugPlugins": false,
+      "debug": false
+    }
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.12",
+    "babel-plugin-macros": "^2.8.0",
+    "babel-plugin-styled-components": "^1.11.1",
     "firebase": "^8.0.0",
     "next": "10.0.0",
+    "postcss-preset-env": "^6.7.0",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "styled-components": "^5.2.1",
+    "tailwindcss": "^1.9.6",
+    "twin.macro": "^1.12.0"
   }
 }
