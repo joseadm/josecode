@@ -7,11 +7,11 @@ export const MyButton = tw.button`
   py-2
 `;
 
-export const Main = tw.div`flex mb-4 container mx-auto my-8`;
+export const Main = tw.div`flex mb-4 container flex-col lg:flex-row mx-auto my-8`;
 
-export const BlogSection = tw.div`w-full md:w-2/3`
+export const BlogSection = tw.div`w-full lg:w-2/3`
 
-export const MediaSection = tw.div`w-full md:w-1/3`
+export const MediaSection = tw.div`w-full  lg:w-1/3`
 
 export const BlogList = tw.ul`flex flex-col  p-4 w-11/12`
 

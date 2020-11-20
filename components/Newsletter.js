@@ -2,7 +2,7 @@ import React from 'react';
 
 const Newsletter = () => {
     return (
-        <div class="max-w-sm rounded overflow-hidden shadow-lg text-center ml-4 mt-4">
+        <div class="max-w-sm rounded overflow-hidden shadow-lg text-center ml-4 mt-4" style={{margin: 'auto', marginTop: '20px'}}>
   <div class="px-6 py-4">
     <div class="font-bold text-xl mb-2 mt-4">¡Subscribe to our newsletter!</div>
     <p class="text-gray-700 text-base">

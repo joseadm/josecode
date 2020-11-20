@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    ul {
+        @apply list-disc pl-10;
+    }
+    h2 {
+        @apply text-blue-500;
+    }
+    pre {
+        background: #282c34;
+        border-radius: 4px;
+        color: #fff;
+        margin: 0;
+        overflow: auto;
+        padding: 16px;
+        @apply shadow-md;
+    }
+  }

@@ -10,6 +10,7 @@ import Topics from "../components/Topics";
 import Footer from "../components/Footer";
 import Newsletter from "../components/Newsletter";
 import Podcast from "../components/Podcast";
+import CreatePost from "../components/CreatePost";
 
 const Home = () => {
   const [blogs, setBlogs] = useState([]);
@@ -18,7 +19,6 @@ const Home = () => {
 
   let pageSize = 6;
   let field = "readingTime";
-
 
   useEffect(() => {
     fire
@@ -51,12 +51,13 @@ const Home = () => {
       .firestore()
       .collection("blog")
       .orderBy(field)
-      .limit(pageSize)
+      .limit(10)
       .onSnapshot((snap) => {
         const blogs = snap.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
         }));
+        console.log(blogs);
         setBlogs(blogs);
       });
   }, []);
@@ -81,16 +82,15 @@ const Home = () => {
                   blogId={blog.id}
                 />
               ))}
-<div class="inline-flex pt-4">
-  <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
-    Prev
-  </button>
-  <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r">
-    Next
-  </button>
-</div>
+              <div class="inline-flex pt-4">
+                <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
+                  Prev
+                </button>
+                <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r">
+                  Next
+                </button>
+              </div>
             </BlogList>
-
           </div>
           <hr className="w-11/12" />
           <br />
@@ -129,3 +129,5 @@ const Home = () => {
 };
 
 export default Home;
+
+//       <CreatePost />

@@ -26,8 +26,8 @@ const CreatePost = () => {
     .add({
         title : title,
         content: content,
-        date: date,
-        minutes: minutes
+        date: "123",
+        readingTime: "233"
     });
 
     setTitle('');
