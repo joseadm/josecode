@@ -133,7 +133,6 @@ const Home = () => {
         </MediaSection>
       </Main>
       <Footer />
-      <CreatePost />
     </div>
   );
 };
