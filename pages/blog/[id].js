@@ -73,7 +73,7 @@ const Blog = (props) => {
     return (
       <div>
         <Head>
-          <title>jdev</title>
+          <title>josecode</title>
         </Head>
         <Navbar />
         <Main>
@@ -111,7 +111,7 @@ const Blog = (props) => {
   return (
     <div>
       <Head>
-        <title>jdev</title>
+        <title>josecode</title>
       </Head>
       <Navbar />
       <Main>

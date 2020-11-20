@@ -74,7 +74,7 @@ const Home = () => {
   return (
     <div>
       <Head>
-        <title>jdev</title>
+        <title>josecode</title>
       </Head>
       <Navbar />
       <Main>
@@ -133,6 +133,7 @@ const Home = () => {
         </MediaSection>
       </Main>
       <Footer />
+      <CreatePost />
     </div>
   );
 };
