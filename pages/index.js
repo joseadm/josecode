@@ -2,7 +2,6 @@
 import Head from "next/head";
 import { useState, useEffect } from "react";
 import fire from "../config/fire-config";
-import { Main, BlogSection, MediaSection, BlogList, VideoList } from "./styled";
 import Navbar from "../components/Navbar";
 import Article from "../components/Article";
 import Video from "../components/Video";
@@ -11,7 +10,17 @@ import Footer from "../components/Footer";
 import Newsletter from "../components/Newsletter";
 import Podcast from "../components/Podcast";
 import CreatePost from "../components/CreatePost";
+import tw from "twin.macro";
 
+const Main = tw.div`flex mb-4 container flex-col lg:flex-row mx-auto my-8`;
+
+ const BlogSection = tw.div`w-full lg:w-2/3`;
+
+const MediaSection = tw.div`w-full  lg:w-1/3`;
+
+const BlogList = tw.ul`flex flex-col  p-4 w-11/12`;
+
+ const VideoList = tw.ul`flex flex-col  p-4 w-full`;
 const Home = () => {
   const [blogs, setBlogs] = useState([]);
   const [videos, setVideos] = useState([]);

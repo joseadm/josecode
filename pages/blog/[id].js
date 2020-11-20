@@ -6,12 +6,22 @@ import Navbar from "../../components/Navbar";
 import { useEffect, useState } from "react";
 import fire from "../../config/fire-config";
 import BlogContent from "../../components/BlogContent";
-import { Main, BlogSection, MediaSection, VideoList } from "../styled";
 import Video from "../../components/Video";
 import Footer from "../../components/Footer";
+import tw from "twin.macro";
 
 import Newsletter from "../../components/Newsletter";
 import Podcast from "../../components/Podcast";
+
+const Main = tw.div`flex mb-4 container flex-col lg:flex-row mx-auto my-8`;
+
+ const BlogSection = tw.div`w-full lg:w-2/3`;
+
+const MediaSection = tw.div`w-full  lg:w-1/3`;
+
+const BlogList = tw.ul`flex flex-col  p-4 w-11/12`;
+
+ const VideoList = tw.ul`flex flex-col  p-4 w-full`;
 
 const Blog = (props) => {
   const [videos, setVideos] = useState([]);
