@@ -3,8 +3,8 @@ import {
   faYoutube,
   faTwitter,
   faGithub,
-  faGit,
 } from "@fortawesome/free-brands-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Navbar({ fixed }) {
@@ -25,7 +25,7 @@ export default function Navbar({ fixed }) {
               type="button"
               onClick={() => setNavbarOpen(!navbarOpen)}
             >
-              <i className="fas fa-bars"></i>
+              <FontAwesomeIcon icon={faBars} size="lg" />
             </button>
           </div>
           <div
@@ -67,7 +67,7 @@ export default function Navbar({ fixed }) {
               <li className="nav-item">
                 <a
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  href="#pablo"
+                  href="https://github.com/joseadm"
                 >
                   <i className="fab fa-pinterest text-lg leading-lg text-white opacity-75"></i>
                   <span className="ml-2">
@@ -79,24 +79,24 @@ export default function Navbar({ fixed }) {
               <li className="nav-item">
                 <a
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  href="#pablo"
+                  href="https://twitter.com/alonsocoding"
                 >
                   <i className="fab fa-pinterest text-lg leading-lg text-white opacity-75"></i>
                   <span className="ml-2">
                     {" "}
-                    <FontAwesomeIcon icon={faTwitter} size="lg"/>
+                    <FontAwesomeIcon icon={faTwitter} size="lg" />
                   </span>
                 </a>
               </li>
               <li className="nav-item">
                 <a
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  href="#pablo"
+                  href="https://www.youtube.com/channel/UCki6h_CQ5H717vslj4JPq4g?view_as=subscriber"
                 >
                   <i className="fab fa-pinterest text-lg leading-lg text-white opacity-75"></i>
                   <span className="ml-2">
                     {" "}
-                    <FontAwesomeIcon icon={faYoutube}  size="lg"/>
+                    <FontAwesomeIcon icon={faYoutube} size="lg" />
                   </span>
                 </a>
               </li>

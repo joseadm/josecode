@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import '../node_modules/react-modal-video/css/modal-video.min.css';
 
 @layer base {
     ul {

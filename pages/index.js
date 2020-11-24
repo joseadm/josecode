@@ -11,20 +11,23 @@ import Newsletter from "../components/Newsletter";
 import Podcast from "../components/Podcast";
 import CreatePost from "../components/CreatePost";
 import tw from "twin.macro";
+import React from "react";
+import ModalVideo from "react-modal-video";
 
 const Main = tw.div`flex mb-4 container flex-col lg:flex-row mx-auto my-8`;
 
- const BlogSection = tw.div`w-full lg:w-2/3`;
+const BlogSection = tw.div`w-full lg:w-2/3`;
 
 const MediaSection = tw.div`w-full  lg:w-1/3`;
 
-const BlogList = tw.ul`flex flex-col  p-4 w-11/12`;
+const BlogList = tw.ul`flex flex-col  p-4 w-full md:w-11/12 `;
 
- const VideoList = tw.ul`flex flex-col  p-4 w-full`;
+const VideoList = tw.ul`flex flex-col  p-4 w-full`;
 const Home = () => {
   const [blogs, setBlogs] = useState([]);
   const [videos, setVideos] = useState([]);
   const [podcasts, setPodcasts] = useState([]);
+  const [isOpen, setOpen] = useState(false);
 
   let pageSize = 6;
   let field = "readingTime";
@@ -111,7 +114,24 @@ const Home = () => {
           <div className="container flex mx-auto w-full">
             <VideoList>
               {videos.map((video) => (
-                <Video image={video.image} description={video.description} />
+                <React.Fragment>
+                  <ModalVideo
+                    channel="youtube"
+                    autoplay
+                    isOpen={isOpen}
+                    videoId="gAkwW2tuIqE"
+                    onClose={() => setOpen(false)}
+                  />
+                  <button
+                    className="focus:outline-none"
+                    onClick={() => setOpen(true)}
+                  >
+                    <Video
+                      image={video.image}
+                      description={video.description}
+                    />
+                  </button>
+                </React.Fragment>
               ))}
             </VideoList>
           </div>

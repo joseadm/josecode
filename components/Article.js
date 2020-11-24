@@ -15,7 +15,7 @@ const Article = ({ title, icon, date, readingTime, blogId }) => {
               src={icon}
             />
           </div>
-          <div className="flex-1 pl-1 mr-16">
+          <div className="flex-1 pl-1">
             <div className="font-medium text-lg text-gray-800">{title}</div>
             <div className="text-gray-600 text-sm">
               {date} - {readingTime} minutes lecture
