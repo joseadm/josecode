@@ -75,7 +75,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{overflow: 'hidden'}}>
       <Head>
         <title>josecode</title>
       </Head>
