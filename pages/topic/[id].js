@@ -1,20 +1,15 @@
-// pages/index.justify
+// Topic/[id].js
 import Head from "next/head";
 import { useState, useEffect } from "react";
-import fire from "../config/fire-config";
-import Navbar from "../components/Navbar";
-import Article from "../components/Article";
-import Video from "../components/Video";
-import Footer from "../components/Footer";
-import Newsletter from "../components/Newsletter";
-import Podcast from "../components/Podcast";
+import fire from "../../config/fire-config";
+import Navbar from "../../components/Navbar";
+import Article from "../../components/Article";
+import Footer from "../../components/Footer";
+import Newsletter from "../../components/Newsletter";
 import tw from "twin.macro";
 import React from "react";
-import ModalVideo from "react-modal-video";
-import Topic from "../components/Topic";
-import VideoPlayer from "../components/VideoPlayer";
+import VideoPlayer from "../../components/VideoPlayer";
 
-import axios from 'axios'
 import ReactPaginate from 'react-paginate';
 
 const Main = tw.div`flex mb-4 container flex-col lg:flex-row mx-auto my-8`;
@@ -27,9 +22,10 @@ const BlogList = tw.ul`flex flex-col  p-4 w-full md:w-11/12 `;
 
 const VideoList = tw.ul`flex flex-col  p-4 w-full`;
 
-const Home = () => {
+const Topic = (props) => {
 
-  const [blogs, setBlogs] = useState([]);
+
+    const [blogs, setBlogs] = useState([]);
   const [videos, setVideos] = useState([]);
   const [podcasts, setPodcasts] = useState([]);
   const [isOpen, setOpen] = useState(false);
@@ -73,6 +69,7 @@ const Home = () => {
     fire
       .firestore()
       .collection("blog")
+      .where("topic", "==", props.id)
       .onSnapshot((snap) => {
         const blogs = snap.docs.map((doc) => ({
           id: doc.id,
@@ -105,15 +102,24 @@ const Home = () => {
    getData()
  }, [offset])
 
+  if (!Topic) {
+    return (
+      <div>Loading...</div>
+    );
+  }
+
   return (
-    <div style={{overflow: 'hidden'}}>
+    <div>
+
+
+<div style={{overflow: 'hidden'}}>
       <Head>
         <title>josecode</title>
       </Head>
       <Navbar />
       <Main>
         <BlogSection>
-          <h1 className="pl-4 font-medium">Last Articles 📝</h1>
+          <h1 className="pl-4 font-medium">Artiles topic {props.id} 📝</h1>
           <div className="container flex mx-auto w-full">
             <BlogList>
 
@@ -139,62 +145,7 @@ const Home = () => {
 
 </BlogList>
           </div>
-          <hr className="w-11/12" />
-          <br />
-          <h1 className="pl-4 font-medium pb-4">All topics 📚</h1>
-
-          <div className="w-full md:w-11/12  pt-4">
-      <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-        <Topic
-          title={".NET"}
-          color={"bg-purple-500"}
-          image={
-            "url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/.NET_Logo.svg/1200px-.NET_Logo.svg.png)"
-          }
-          topic={"net"}
-        />
-        <Topic
-          title={"Javascript"}
-          color={"bg-yellow-500"}
-          image={
-            "url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png)"
-          }
-          topic={"javascript"}
-        />
-        <Topic
-          title={"Angular"}
-          color={"bg-red-500"}
-          image={
-            "url(https://hyperdrivedesigns.com/wp-content/uploads/2015/05/angular-post.png)"
-          }
-          topic={"angular"}
-        />   
-        <Topic
-          title={"Azure"}
-          color={"bg-blue-500"}
-          image={
-            "url(https://dotnet.microsoft.com/blob-assets/images/customers/azure-app.jpeg?v=nz_1asLqukigxE_j3crpOSgd08kjgFvms8NKt8p5yEE)"
-          }
-          topic={"azure"}
-        /> 
-        <Topic
-          title={"Data"}
-          color={"bg-indigo-500"}
-          image={
-            "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFxZOVP7oCfsPZyhWG551oWkzUYvDZhnloBg&usqp=CAU)"
-          }
-          topic={"data"}
-        /> 
-        <Topic
-          title={"React"}
-          color={"bg-blue-300"}
-          image={
-            "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLAgww5mYZA_wf-aw5sSIww98KhfSfmRx6Kw&usqp=CAU)"
-          }
-          topic={"react"}
-        /> 
-      </div>
-    </div>
+          
         </BlogSection>
         <MediaSection>
           <h1 className="pl-4 font-medium">Vídeos 🎥</h1>
@@ -225,10 +176,15 @@ const Home = () => {
       </Main>
       <Footer />
     </div>
+        
+    </div>
   );
-
 };
 
-export default Home;
+Topic.getInitialProps = ({ query }) => {
+  return {
+    id: query.id,
+  };
+};
 
-//       <CreatePost />
+export default Topic;

@@ -20,3 +20,11 @@
         @apply shadow-md;
     }
   }
+
+  ul.pagination {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    list-style: none;
+    padding: 0;
+  }
