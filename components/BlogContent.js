@@ -5,7 +5,7 @@ import gfm from 'remark-gfm';
 
 const BlogContent = ({title, content, icon, date}) => {
   return (
-    <div className="container w-full mx-auto  text-gray-700">
+    <div className="container w-full mx-auto text-gray-700">
       <div className="w-full px-4 md:px-6 text-xl font-light text-grey-darkest leading-normal">
         <div className="font-sans">
           <span className="text-base md:text-sm text-teal font-bold"></span>

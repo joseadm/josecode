@@ -178,12 +178,12 @@ const Home = () => {
           topic={"azure"}
         /> 
         <Topic
-          title={"Data"}
-          color={"bg-indigo-500"}
+          title={"Node"}
+          color={"bg-green-500"}
           image={
-            "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFxZOVP7oCfsPZyhWG551oWkzUYvDZhnloBg&usqp=CAU)"
+            "url(https://colorlib.com/wp/wp-content/uploads/sites/2/node.js-logo.png)"
           }
-          topic={"data"}
+          topic={"node"}
         /> 
         <Topic
           title={"React"}
