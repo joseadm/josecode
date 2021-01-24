@@ -32,55 +32,14 @@ const BlogContent = ({title, content, icon, date}) => {
 
       </div>
 
-      <div className="text-base md:text-sm text-grey px-4 py-6">
-        Tags:{" "}
-        <a
-          href="#"
-          className="text-base md:text-sm text-teal no-underline hover:underline"
-        >
-          Link
-        </a>{" "}
-        .{" "}
-        <a
-          href="#"
-          className="text-base md:text-sm text-teal no-underline hover:underline"
-        >
-          Link
-        </a>
-      </div>
+      <hr className="border-b-2 border-grey-light mb-8 mx-4 mt-8" />
 
-      <hr className="border-b-2 border-grey-light mb-8 mx-4" />
-
-      <div className="font-sans flex justify-between content-center px-4 pb-12">
-        <div className="text-left">
-          <span className="text-xs md:text-sm font-normal text-grey-dark">
-            &lt; Previous Post
-          </span>
-          <br />
-          <p>
-            <a
-              href="#"
-              className="break-normal text-base md:text-sm text-teal font-bold no-underline hover:underline"
-            >
-              Blog title
-            </a>
+      <p>
+            {" "}
+            <Link href="/">
+                <a className="text-base md:text-sm text-teal font-bold no-underline hover:underline">&lt; BACK TO BLOG</a>
+            </Link>
           </p>
-        </div>
-        <div className="text-right">
-          <span className="text-xs md:text-sm font-normal text-grey-dark">
-            Next Post &gt;
-          </span>
-          <br />
-          <p>
-            <a
-              href="#"
-              className="break-normal text-base md:text-sm text-teal font-bold no-underline hover:underline"
-            >
-              Blog title
-            </a>
-          </p>
-        </div>
-      </div>
     </div>
   );
 };
