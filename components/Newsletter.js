@@ -4,7 +4,7 @@ const Newsletter = () => {
     return (
         <div className="max-w-sm rounded overflow-hidden shadow-lg text-center ml-4 mt-4" style={{margin: 'auto', marginTop: '20px'}}>
   <div className="px-6 py-4">
-    <div className="font-bold text-xl mb-2 mt-4">¡Subscribe to our newsletter!</div>
+    <div className="font-bold text-xl mb-2 mt-4">¡Subscribe to the newsletter!</div>
     <p className="text-gray-700 text-base">
       You will receive articles about software development and other news currently in work. <strong>No spam</strong>
     </p>

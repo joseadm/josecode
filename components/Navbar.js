@@ -4,8 +4,9 @@ import {
   faTwitter,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faMountain } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from 'next/link'
 
 export default function Navbar({ fixed }) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -18,7 +19,8 @@ export default function Navbar({ fixed }) {
               className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase text-white"
               href="/"
             >
-              JOSECODE
+              <FontAwesomeIcon icon={faMountain} size="lg" className="mr-2"/>
+              Jose Delgado
             </a>
             <button
               className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
@@ -42,7 +44,16 @@ export default function Navbar({ fixed }) {
                   href="/"
                 >
                   <i className="fab fa-facebook-square text-lg leading-lg text-white opacity-75"></i>
-                  <span className="ml-2">Articles</span>
+                  <span className="ml-2">BLOG</span>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                  href="/"
+                >
+                  <i className="fab fa-facebook-square text-lg leading-lg text-white opacity-75"></i>
+                  <span className="ml-2">PROJECTS</span>
                 </a>
               </li>
               <li className="nav-item">
@@ -51,26 +62,19 @@ export default function Navbar({ fixed }) {
                   href="/"
                 >
                   <i className="fab fa-twitter text-lg leading-lg text-white opacity-75"></i>
-                  <span className="ml-2">Videos</span>
+                  <span className="ml-2">VIDEOS/PODCAST</span>
                 </a>
               </li>
               <li className="nav-item">
-                <a
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  href="/"
-                >
-                  <i className="fab fa-twitter text-lg leading-lg text-white opacity-75"></i>
-                  <span className="ml-2">Podcast</span>
-                </a>
-              </li>
-              <li className="nav-item">
+                <Link href="/resume">
                 <a
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                   href="/"
                 >
                   <i className="fab fa-pinterest text-lg leading-lg text-white opacity-75"></i>
-                  <span className="ml-2">Newsletter</span>
+                  <span className="ml-2">RESUME</span>
                 </a>
+                </Link>
               </li>
 
               <li className="nav-item">

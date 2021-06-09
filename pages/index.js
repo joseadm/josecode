@@ -126,14 +126,14 @@ const Home = () => {
                 <a
                   href="#"
                   onClick={() => onPreviousPage()}
-                  class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium hover:bg-gray-50"
+                  className="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium hover:bg-gray-50"
                 >
                   Previous
                 </a>
                 <a
                   href="#"
                   onClick={() => onNextPage()}
-                  class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium hover:bg-gray-50"
+                  className="relative inline-flex  items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium hover:bg-gray-50"
                 >
                   Next
                 </a>
@@ -172,12 +172,12 @@ const Home = () => {
                 topic={'angular'}
               />
               <Topic
-                title={'Azure'}
+                title={'Cloud'}
                 color={'bg-blue-500'}
                 image={
-                  'url(https://dotnet.microsoft.com/blob-assets/images/customers/azure-app.jpeg?v=nz_1asLqukigxE_j3crpOSgd08kjgFvms8NKt8p5yEE)'
+                  'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHCLZ7kWSlLN8vvLhvXl0chDAJ-3jyKfBv4g&usqp=CAU)'
                 }
-                topic={'azure'}
+                topic={'cloud'}
               />
               <Topic
                 title={'Node'}
